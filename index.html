@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TODO</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1 class="app__title">할 일</h1>
+      <p class="app__date" id="today"></p>
+    </header>
+
+    <form class="composer" id="composer" autocomplete="off">
+      <input
+        class="composer__input"
+        id="new-todo"
+        type="text"
+        placeholder="무엇을 해야 하나요?"
+        aria-label="새 할 일 입력"
+        maxlength="200"
+      />
+      <button class="composer__add" type="submit" aria-label="추가">추가</button>
+    </form>
+
+    <section class="filters" id="filters" role="tablist" aria-label="필터">
+      <button class="filters__btn is-active" data-filter="all" role="tab">전체</button>
+      <button class="filters__btn" data-filter="active" role="tab">진행 중</button>
+      <button class="filters__btn" data-filter="completed" role="tab">완료</button>
+    </section>
+
+    <ul class="list" id="list" aria-live="polite"></ul>
+
+    <p class="empty" id="empty" hidden>할 일이 없습니다. 위에서 새로 추가해 보세요.</p>
+
+    <footer class="app__footer" id="footer" hidden>
+      <span class="app__count" id="count"></span>
+      <button class="app__clear" id="clear-completed" type="button">완료 항목 비우기</button>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
